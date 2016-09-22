@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>vue default</title>
-        <link rel="stylesheet" href="{{asset('css/app.css')}}" media="screen" title="no title">
+        <title>Vue Event-Handle</title>
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
         <div class="container">
@@ -11,5 +11,4 @@
         </div>
     </body>
     <script src="{{asset('js/app.js')}}"></script>
-
 </html>

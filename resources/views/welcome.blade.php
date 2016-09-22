@@ -75,15 +75,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel With Vue.js
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{url('/vue/default')}}">Default Component</a>
+                    <a href="{{url('/vue/event-handle')}}">Event-Handle Component</a>
                 </div>
             </div>
         </div>
