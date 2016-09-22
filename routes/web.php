@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/vue/default', function () {
     return view('vue.default');
 });
+Route::get('/vue/event-handle', function () {
+    return view('vue.event-handle');
+});
