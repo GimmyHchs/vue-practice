@@ -15,21 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// basic
 Route::group(['prefix' => 'vue'], function() {
     Route::get('event-handle', function () {
-        return view('vue.event-handle');
+        return view('vue.basic.event-handle');
     });
     Route::get('default', function () {
-        return view('vue.default');
+        return view('vue.basic.default');
     });
     Route::get('data-binding', function () {
-        return view('vue.data-binding');
+        return view('vue.basic.data-binding');
     });
     Route::get('for-list', function () {
-        return view('vue.for-list');
+        return view('vue.basic.for-list');
     });
     Route::get('pass-variable', function () {
-        return view('vue.pass-variable');
+        return view('vue.basic.pass-variable');
+    });
+});
+
+//advance
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('methods-computed', function () {
+        return view('vue.advance.methods-computed');
     });
 });
