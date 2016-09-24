@@ -14,13 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/vue/default', function () {
-    return view('vue.default');
-});
-Route::get('/vue/data-binding', function () {
-    return view('vue.data-binding');
-});
 
-Route::get('/vue/event-handle', function () {
-    return view('vue.event-handle');
+
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('event-handle', function () {
+        return view('vue.event-handle');
+    });
+    Route::get('default', function () {
+        return view('vue.default');
+    });
+    Route::get('data-binding', function () {
+        return view('vue.data-binding');
+    });
+    Route::get('for-list', function () {
+        return view('vue.for-list');
+    });
 });
