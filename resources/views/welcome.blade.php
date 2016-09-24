@@ -82,9 +82,8 @@
                     <a href="{{url('/vue/default')}}">Default Component</a>
                     <a href="{{url('/vue/data-binding')}}">Data-Binding Component</a>
                     <a href="{{url('/vue/event-handle')}}">Event-Handle Component</a>
-                </div>
-                <div class="links">
                     <a href="{{url('/vue/for-list')}}">For-List Component</a>
+                    <a href="{{url('/vue/pass-variable')}}">Pass Variable into Component</a>
                 </div>
             </div>
         </div>

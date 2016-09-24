@@ -29,4 +29,7 @@ Route::group(['prefix' => 'vue'], function() {
     Route::get('for-list', function () {
         return view('vue.for-list');
     });
+    Route::get('pass-variable', function () {
+        return view('vue.pass-variable');
+    });
 });
