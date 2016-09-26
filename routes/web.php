@@ -40,4 +40,10 @@ Route::group(['prefix' => 'vue'], function() {
         return view('vue.advance.methods-computed');
     });
     Route::get('article/all', 'ArticleController@all');
+    Route::get('article/api/all', function() {
+        return App\Article::all();
+    });
+    Route::get('article/resource', function () {
+        return view('vue.advance.resource-ajax');
+    });
 });
