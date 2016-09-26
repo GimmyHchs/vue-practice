@@ -6,5 +6,7 @@ Vue.component('for-list', require('./components/basic/for-list.vue'));
 Vue.component('pass-variable', require('./components/basic/pass-variable.vue'));
 
 
+
 // advance
 Vue.component('methods-computed', require('./components/advance/methods-computed.vue'));
+Vue.component('articles-list', require('./components/advance/articles-list.vue'));

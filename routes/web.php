@@ -39,4 +39,5 @@ Route::group(['prefix' => 'vue'], function() {
     Route::get('methods-computed', function () {
         return view('vue.advance.methods-computed');
     });
+    Route::get('article/all', 'ArticleController@all');
 });
