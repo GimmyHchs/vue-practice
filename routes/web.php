@@ -14,3 +14,36 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// basic
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('event-handle', function () {
+        return view('vue.basic.event-handle');
+    });
+    Route::get('default', function () {
+        return view('vue.basic.default');
+    });
+    Route::get('data-binding', function () {
+        return view('vue.basic.data-binding');
+    });
+    Route::get('for-list', function () {
+        return view('vue.basic.for-list');
+    });
+    Route::get('pass-variable', function () {
+        return view('vue.basic.pass-variable');
+    });
+});
+
+//advance
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('methods-computed', function () {
+        return view('vue.advance.methods-computed');
+    });
+    Route::get('article/all', 'ArticleController@all');
+    Route::get('article/api/all', function() {
+        return App\Article::all();
+    });
+    Route::get('article/resource', function () {
+        return view('vue.advance.resource-ajax');
+    });
+});

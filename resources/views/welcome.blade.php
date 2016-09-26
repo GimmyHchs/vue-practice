@@ -49,6 +49,13 @@
                 font-size: 84px;
             }
 
+            .level {
+                font-size: 30px;
+                font-weight: 600;
+            }
+            .links {
+                margin-bottom: 40px;
+            }
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -57,10 +64,11 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 40px;
             }
         </style>
     </head>
@@ -75,15 +83,25 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel With Vue.js
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div>
+                    <div class="level m-b-md">Basic Vue</div>
+                    <div class="links">
+                        <a href="{{url('/vue/default')}}">Default Component</a>
+                        <a href="{{url('/vue/data-binding')}}">Data-Binding Component</a>
+                        <a href="{{url('/vue/event-handle')}}">Event-Handle Component</a>
+                        <a href="{{url('/vue/for-list')}}">For-List Component</a>
+                        <a href="{{url('/vue/pass-variable')}}">Pass Variable into Component</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="level m-b-md">Advance Vue</div>
+                    <div class="links">
+                        <a href="{{url('/vue/methods-computed')}}">Methods-Computed</a>
+                        <a href="{{url('/vue/article/all')}}">Get-Articles-From-DB</a>
+                        <a href="{{url('/vue/article/resource')}}">Vue-Resource(Ajax)</a>
+                    </div>
                 </div>
             </div>
         </div>
