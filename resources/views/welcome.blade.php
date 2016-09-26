@@ -99,6 +99,8 @@
                     <div class="level m-b-md">Advance Vue</div>
                     <div class="links">
                         <a href="{{url('/vue/methods-computed')}}">Methods-Computed</a>
+                        <a href="{{url('/vue/article/all')}}">Get-Articles-From-DB</a>
+                        <a href="{{url('/vue/article/resource')}}">Vue-Resource(Ajax)</a>
                     </div>
                 </div>
             </div>
