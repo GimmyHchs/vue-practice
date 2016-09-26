@@ -6,8 +6,15 @@
                     <div class="panel-heading">Article List By Resource</div>
                     <div class="panel-body">
                         <div class="">
-                            <button @click="fetchArticles" class="btn btn-primary">Fetch All Articles</button>
-                            <hr>
+                            <div class="form-group">
+                                <button @click="fetchArticles" class="btn btn-primary">Fetch All Articles</button>
+                                <hr>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" v-model="article_id"></input>
+                                <button @click="fetchArticle" class="btn btn-primary" style="margin-top:5px;">Fetch Article By ID</button>
+                                <hr>
+                            </div>
                         </div>
                         <ul v-for="article in articles">
                             <li>
@@ -31,10 +38,25 @@
         props : [
             'articles',
         ],
+        data : function (){
+            return {
+                resource: this.$resource('/vue/article{/id}'),
+                article_id: 1,
+            };
+        },
         methods: {
             fetchArticles : function(){
-                this.$http.get('/vue/article/api/all').then((response) => {
+                this.resource.get().then((response) => {
                     this.articles = response.data;
+                    // console.log(response);
+                }, (response) => {
+                    console.log(response);
+                });
+            },
+            fetchArticle : function(){
+                this.resource.get({id:this.article_id}).then((response) => {
+                    this.articles = response.data;
+                    // console.log(response.data);
                 }, (response) => {
                     console.log(response);
                 });
