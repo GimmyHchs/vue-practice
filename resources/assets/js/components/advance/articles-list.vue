@@ -27,7 +27,7 @@
         props : [
             'articles',
         ],
-        ready() {
+        mounted() {
             console.log('Article List Component Ready')
             console.log(this.articles[0])
         }

@@ -13,7 +13,7 @@
                         <hr>
                         <div>
                             <h2>Data-Binding With $data object</h2>
-                            <p>{{$data | json}}</p>
+                            <p>{{$data}}</p>
                             <input type="text" v-model="message2">
                         </div>
                         <hr>
@@ -31,7 +31,7 @@
                 message2 : 'hello message2'
             };
         },
-        ready(){
+        mounted(){
             console.log('Data-Binding Component Ready'+this.message);
         }
     }
