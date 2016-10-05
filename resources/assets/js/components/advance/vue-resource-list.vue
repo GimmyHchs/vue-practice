@@ -35,11 +35,9 @@
 </style>
 <script>
     export default {
-        props : [
-            'articles',
-        ],
-        data : function (){
+        data() {
             return {
+                articles: [],
                 resource: this.$resource('/vue/article{/id}'),
                 article_id: 1,
             };
@@ -62,7 +60,7 @@
                 });
             },
         },
-        ready() {
+        mounted() {
             console.log('Article List Component Ready')
         }
     }
