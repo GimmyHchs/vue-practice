@@ -42,6 +42,7 @@ Route::group(['prefix' => 'vue'], function() {
     Route::get('article/resource', function () {
         return view('vue.advance.resource-ajax');
     });
+    Route::get('article/crud', 'ArticleController@crud');
     Route::get('article/all', 'ArticleController@all');
     // Route::get('article/api/all', function() {
     //     return App\Article::all();

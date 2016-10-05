@@ -101,6 +101,7 @@
                         <a href="{{url('/vue/methods-computed')}}">Methods-Computed</a>
                         <a href="{{url('/vue/article/all')}}">Get-Articles-From-DB</a>
                         <a href="{{url('/vue/article/resource')}}">Vue-Resource(Ajax)</a>
+                        <a href="{{url('/vue/article/crud')}}">Vue-CRUD(Ajax)</a>
                     </div>
                 </div>
             </div>
