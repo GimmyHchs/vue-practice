@@ -17,5 +17,6 @@ require('./bootstrap');
 require('./vue-define.js');
 
 const app = new Vue({
+    mixins: [mixin],
     el: '#app'
 });
