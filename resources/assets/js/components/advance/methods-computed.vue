@@ -7,8 +7,8 @@
                     <div class="panel-body">
                         <h3>My list <span v-show="remaining">( {{remaining}} )</span></h3>
                         <ul>
-                            <li @click="toggleRead(item)" :class="getClass(item)" v-for="item in list">
-                                <button @click="removeItem(item)">X</button>
+                            <li @click="toggleRead(item)" :class="getClass(item)" v-for="(item, index) in list">
+                                <button @click="removeItem(index)">X</button>
                                 {{item.title}}
                             </li>
 
@@ -53,8 +53,8 @@
             toggleRead : function(item){
                 item.read = !item.read;
             },
-            removeItem : function(item){
-                this.list.$remove(item);
+            removeItem : function(index){
+                this.list.splice(index, 1);
             },
         },
         mounted() {
