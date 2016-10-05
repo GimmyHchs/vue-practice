@@ -28,7 +28,7 @@
             'title',
             'body',
         ],
-        ready() {
+        mounted() {
             console.log('Pass Variable Vue Component ready.')
         }
     }

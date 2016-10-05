@@ -7,7 +7,7 @@
                     <div class="panel-body">
                         <div>
                             <h3>data object</h3>
-                            {{$data | json}}
+                            {{$data}}
                             <hr>
                         </div>
                         <div>
@@ -80,7 +80,7 @@
 </style>
 <script>
     export default{
-        data : function(){
+        data() {
             return {
                 tasks : [
                     'first',
@@ -103,7 +103,7 @@
                 task.read = !task.read;
             },
         } ,
-        ready(){
+        mounted(){
             console.log('For-list Component Ready');
         }
     }

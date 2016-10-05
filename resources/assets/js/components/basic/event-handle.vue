@@ -47,7 +47,7 @@
 
 <script>
 export default {
-    data: function() {
+    data() {
         return {
             count: 0
         };
@@ -62,7 +62,7 @@ export default {
             this.count+=1;
         }
     },
-    ready() {
+    mounted() {
         console.log('Event Handle Vue Component ready.')
     }
 }
