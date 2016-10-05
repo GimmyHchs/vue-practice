@@ -11,3 +11,4 @@ Vue.component('pass-variable', require('./components/basic/pass-variable.vue'));
 Vue.component('articles-list', require('./components/advance/articles-list.vue'));
 Vue.component('methods-computed', require('./components/advance/methods-computed.vue'));
 Vue.component('vue-resource-list', require('./components/advance/vue-resource-list.vue'));
+Vue.component('crud', require('./components/advance/crud.vue'));
