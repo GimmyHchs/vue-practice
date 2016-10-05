@@ -17,8 +17,9 @@
                         <div v-if="isEmptyModels" class="well" style="padding:50px;">
                             <button v-on:click="shuffle">Shuffle</button>
                             <transition-group
-                            name="flip-list"
-                            tag="ul"
+                            enter-active-class="animated rollIn"
+                            leave-active-class="animated zoomOut"
+                            tag="p"
                             >
                             <ul v-for="(model, index) in models" :key="model.id">
                                 <div class="panel panel-default panel-fix">
@@ -53,6 +54,17 @@ ul > .panel-fix{
 }
 .flip-list-move {
   transition: transform 1s;
+}
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-active {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
 <script>
@@ -101,8 +113,10 @@ ul > .panel-fix{
             },
             deleteModel : function(model, index){
                 this.resource.delete({id:model.id}).then((response, index) => {
+                    console.log(index);
                     this.models.splice(index, 1);
                     console.log(response.data);
+                    // console.log(index);
                 }, (response) => {
                     console.log(response);
                 });
