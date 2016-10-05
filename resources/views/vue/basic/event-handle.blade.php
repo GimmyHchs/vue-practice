@@ -10,5 +10,6 @@
             <event-handle></event-handle>
         </div>
     </body>
+    @include('vue.partials.mixin')
     <script src="{{asset('js/app.js')}}"></script>
 </html>

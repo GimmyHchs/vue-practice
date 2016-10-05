@@ -57,7 +57,7 @@
                 this.list.$remove(item);
             },
         },
-        ready() {
+        mounted() {
             console.log('Methods Computed Component Ready')
         }
     }

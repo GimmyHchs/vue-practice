@@ -10,5 +10,6 @@
             <data-binding></data-binding>
         </div>
     </body>
+    @include('vue.partials.mixin')
     <script src="{{asset('js/app.js')}}"></script>
 </html>
