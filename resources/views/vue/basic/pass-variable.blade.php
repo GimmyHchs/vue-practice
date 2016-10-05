@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-        <div class="container">
+        <div id="app" class="container">
             <h1>Pass Variable</h1>
             <pass-variable title="hello" body="nice to meet you!!!"></pass-variable>
         </div>

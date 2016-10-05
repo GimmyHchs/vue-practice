@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-        <div class="container">
+        <div id="app" class="container">
             <h1>Event Handle</h1>
             <event-handle></event-handle>
         </div>

@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-        <div class="container">
+        <div id="app" class="container">
             <h1>Data Binding</h1>
             <data-binding></data-binding>
         </div>

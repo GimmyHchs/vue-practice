@@ -31,7 +31,7 @@
                 message2 : 'hello message2'
             };
         },
-        ready(){
+        mounted(){
             console.log('Data-Binding Component Ready'+this.message);
         }
     }

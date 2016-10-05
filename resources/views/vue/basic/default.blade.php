@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}" media="screen" title="no title">
     </head>
     <body>
-        <div class="container">
+        <div id="app" class="container">
             <h1>Default Vue Component</h1>
             <default></default>
         </div>
