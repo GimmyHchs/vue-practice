@@ -15,7 +15,12 @@
                             <hr>
                         </div>
                         <div v-if="isEmptyModels" class="well" style="padding:50px;">
-                            <ul v-for="(model, index) in models">
+                            <button v-on:click="shuffle">Shuffle</button>
+                            <transition-group
+                            name="flip-list"
+                            tag="ul"
+                            >
+                            <ul v-for="(model, index) in models" :key="model.id">
                                 <div class="panel panel-default panel-fix">
                                     <div class="panel-body panel-body-fix">
                                         <div class="row">
@@ -31,6 +36,7 @@
                                     </div>
                                 </div>
                             </ul>
+                        </transition-group>
                         </div>
                     </div>
                 </div>
@@ -44,6 +50,9 @@ ul > .panel-fix{
 }
 .panel-fix > .panel-body-fix{
     padding: 50px;
+}
+.flip-list-move {
+  transition: transform 1s;
 }
 </style>
 <script>
@@ -69,12 +78,16 @@ ul > .panel-fix{
             },
         },
         methods: {
+            shuffle: function () {
+              this.models = _.shuffle(this.models)
+            },
             fetchModels : function(){
                 this.resource.get().then((response) => {
                     this.models = response.data;
                     // console.log(response);
                 }, (response) => {
-                    console.log(response);
+                    this.models = [];
+                    // console.log(response);
                 });
             },
             fetchModel : function(){
@@ -82,6 +95,7 @@ ul > .panel-fix{
                     this.models = response.data;
                     // console.log(response.data);
                 }, (response) => {
+                    this.models = [];
                     console.log(response);
                 });
             },

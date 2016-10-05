@@ -36,6 +36,9 @@ Route::group(['prefix' => 'vue'], function() {
 
 //advance
 Route::group(['prefix' => 'vue'], function() {
+    Route::get('transition', function () {
+        return view('vue.advance.transition');
+    });
     Route::get('methods-computed', function () {
         return view('vue.advance.methods-computed');
     });
