@@ -6,19 +6,23 @@
                     <div class="panel-heading">List By Resource</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <button @click="fetchModels" class="btn btn-primary">Fetch All Models</button>
+                            <button @click="fetchModels" class="btn btn-primary forms">Fetch All Models</button>
+                            <input class="form-control forms" type="text" v-model="model_id"></input>
+                            <button @click="fetchModel" class="btn btn-primary forms">Fetch Model By ID</button>
                             <hr>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" v-model="model_id"></input>
-                            <button @click="fetchModel" class="btn btn-primary" style="margin-top:5px;">Fetch Model By ID</button>
+                            <button @click="createModel" class="btn btn-warning">Create A  Model</button>
+                            <input class="form-control forms" type="text" v-model="title">
+                            <input class="form-control forms" type="text" v-model="content">
                             <hr>
                         </div>
                         <div v-if="isEmptyModels" class="well" style="padding:50px;">
                             <button v-on:click="shuffle">Shuffle</button>
                             <transition-group
                             enter-active-class="animated rollIn"
-                            leave-active-class="animated zoomOut"
+                            leave-active-class="animated zoomOutLeft absolute"
+                            move-class="list-move"
                             tag="p"
                             >
                             <ul v-for="(model, index) in models" :key="model.id">
@@ -52,20 +56,16 @@ ul > .panel-fix{
 .panel-fix > .panel-body-fix{
     padding: 50px;
 }
-.flip-list-move {
+.forms{
+    margin-top: 5px;
+}
+.list-move {
   transition: transform 1s;
 }
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
+.absolute{
+    position: absolute;
 }
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-active {
-  opacity: 0;
-  transform: translateY(30px);
-}
+
 </style>
 <script>
     export default {
@@ -77,6 +77,8 @@ ul > .panel-fix{
                 models: [],
                 resource: this.$resource(this.resource_path+'{/id}'),
                 model_id: 1,
+                title : 'mytitle',
+                content : 'mycontent',
             };
         },
         computed:{
@@ -111,9 +113,17 @@ ul > .panel-fix{
                     console.log(response);
                 });
             },
+            createModel : function(){
+                this.resource.save({title: this.title, content: this.content}).then((response) => {
+                    // console.log(response.data);
+                    this.models.push(response.data);
+                }, (response) => {
+                    console.log(response);
+                });
+            },
             deleteModel : function(model, index){
-                this.resource.delete({id:model.id}).then((response, index) => {
-                    console.log(index);
+
+                this.resource.delete({id:model.id}).then((response) => {
                     this.models.splice(index, 1);
                     console.log(response.data);
                     // console.log(index);
