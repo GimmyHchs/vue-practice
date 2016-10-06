@@ -58,4 +58,7 @@ Route::group(['prefix' => 'vue'], function() {
     Route::get('first-chart', function () {
         return view('vue.mix.first-chart');
     });
+    Route::get('charts', function () {
+        return view('vue.mix.charts');
+    });
 });

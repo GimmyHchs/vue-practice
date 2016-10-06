@@ -8,7 +8,7 @@
                     <div>{{chart_data.datasets[0].data}}</div>
                     <button type="button" @click="renderChart()">Rendor Line Chart</button>
                 </div>
-                <canvas id="canvas" width="300" height="300">
+                <canvas id="canvas" width="100" height="100">
                 </canvas>
             </div>
         </div>

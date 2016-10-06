@@ -107,6 +107,7 @@
                     <div class="links">
                         <a href="{{url('/vue/article/crud')}}">Vue-CRUD(Ajax&transition)</a>
                         <a href="{{url('/vue/first-chart')}}">Vue-Mix-ChartJs</a>
+                        <a href="{{url('/vue/charts')}}">Vue-ChartJs-Components</a>
                     </div>
                 </div>
             </div>

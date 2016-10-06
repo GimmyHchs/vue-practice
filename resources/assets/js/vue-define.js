@@ -18,3 +18,5 @@ Vue.component('transition-component', require('./components/advance/transition-c
 Vue.component('crud', require('./components/mix/crud.vue'));
 window.first_chart = require('./mixin/first-chart.js');
 Vue.component('first-chart', require('./components/mix/first-chart.vue'));
+Vue.component('line-chart', require('./components/mix/line-chart.vue'));
+Vue.component('bar-chart', require('./components/mix/bar-chart.vue'));
