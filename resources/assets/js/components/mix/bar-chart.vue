@@ -16,6 +16,8 @@ export default {
     data(){
         return {
             canvas : null,
+            context : null,
+            chart: null,
             options :{
                 responsive:false,
                 maintainAspectRatio:false,
@@ -50,9 +52,24 @@ export default {
             },
         };
     },
+    watch:{
+        data(val){
+            // console.log(val);
+            this.renderChart();
+        },
+        labels(val){
+            // console.log(val);
+            this.renderChart();
+        }
+    },
     methods:{
+        cleanChart(){
+            if(this.chart!=null)
+                this.chart.destroy();
+        },
         renderChart() {
-            this.chart = new Chart(this.canvas, {
+            this.cleanChart();
+            this.chart = new Chart(this.context, {
                 type: 'bar',
                 data: this.bar_data,
                 options: {
@@ -77,10 +94,15 @@ export default {
         },
     },
     mounted() {
-        this.canvas = document.querySelector('#bar-canvas').getContext('2d');
+        this.canvas = document.querySelector('#bar-canvas');
+        this.context = this.canvas.getContext('2d');
         this.checkSize();
         this.renderChart();
-        console.log('Bar Chart Component ready.');
+        // console.log('Bar Chart Component ready.');
+    },
+    beforeDestroy(){
+        this.cleanChart();
+        // console.log('Line Chart Before Destroy');
     }
 }
 </script>

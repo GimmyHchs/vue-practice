@@ -16,6 +16,9 @@ export default {
     data(){
         return {
             canvas : null,
+            context : null,
+            chart: null,
+            isAutoRender: true,
             options :{
                 responsive:false,
                 maintainAspectRatio:false,
@@ -49,9 +52,24 @@ export default {
             },
         };
     },
+    watch:{
+        data(val){
+            // console.log(val);
+            this.renderChart();
+        },
+        labels(val){
+            // console.log(val);
+            this.renderChart();
+        }
+    },
     methods:{
+        cleanChart(){
+            if(this.chart!=null)
+                this.chart.destroy();
+        },
         renderChart() {
-            this.chart = new Chart(this.canvas, {
+            this.cleanChart();
+            this.chart = new Chart(this.context, {
                 type: 'line',
                 data: this.line_data,
                 options: {
@@ -59,7 +77,7 @@ export default {
                     maintainAspectRatio : this.options.maintainAspectRatio,
                 }
             });
-            console.log(this.chart);
+            // console.log(this.chart);
         },
         checkSize(){
             if(this.width==null||this.height==null)
@@ -70,14 +88,15 @@ export default {
         },
     },
     mounted() {
-        this.canvas = document.querySelector('#line-canvas').getContext('2d');
+        this.canvas = document.querySelector('#line-canvas');
+        this.context = this.canvas.getContext('2d');
         this.checkSize();
         this.renderChart();
-        console.log('Line Chart Component ready.');
+        // console.log('Line Chart Component ready.');
     },
     beforeDestroy(){
-        this.canvas.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        console.log('Line Chart Before Destroy');
+        this.cleanChart();
+        // console.log('Line Chart Before Destroy');
     }
 }
 </script>
