@@ -106,6 +106,7 @@
                     <div class="level m-b-md">Mix Vue</div>
                     <div class="links">
                         <a href="{{url('/vue/article/crud')}}">Vue-CRUD(Ajax&transition)</a>
+                        <a href="{{url('/vue/first-chart')}}">Vue-Mix-ChartJs</a>
                     </div>
                 </div>
             </div>

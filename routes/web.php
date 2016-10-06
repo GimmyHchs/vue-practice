@@ -52,3 +52,10 @@ Route::group(['prefix' => 'vue'], function() {
     // });
     Route::resource('article', 'ArticleController');
 });
+
+//mix
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('first-chart', function () {
+        return view('vue.mix.first-chart');
+    });
+});
