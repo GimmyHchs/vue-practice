@@ -18,6 +18,7 @@ export default {
             canvas : null,
             context : null,
             chart: null,
+            isAutoRender: true,
             options :{
                 responsive:false,
                 maintainAspectRatio:false,
@@ -51,6 +52,16 @@ export default {
             },
         };
     },
+    watch:{
+        data(val){
+            // console.log(val);
+            this.renderChart();
+        },
+        labels(val){
+            // console.log(val);
+            this.renderChart();
+        }
+    },
     methods:{
         cleanChart(){
             if(this.chart!=null)
@@ -66,7 +77,7 @@ export default {
                     maintainAspectRatio : this.options.maintainAspectRatio,
                 }
             });
-            console.log(this.chart);
+            // console.log(this.chart);
         },
         checkSize(){
             if(this.width==null||this.height==null)

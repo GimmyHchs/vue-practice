@@ -52,6 +52,16 @@ export default {
             },
         };
     },
+    watch:{
+        data(val){
+            // console.log(val);
+            this.renderChart();
+        },
+        labels(val){
+            // console.log(val);
+            this.renderChart();
+        }
+    },
     methods:{
         cleanChart(){
             if(this.chart!=null)
@@ -88,7 +98,7 @@ export default {
         this.context = this.canvas.getContext('2d');
         this.checkSize();
         this.renderChart();
-        console.log('Bar Chart Component ready.');
+        // console.log('Bar Chart Component ready.');
     },
     beforeDestroy(){
         this.cleanChart();
