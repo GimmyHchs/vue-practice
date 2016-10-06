@@ -36,6 +36,9 @@ Route::group(['prefix' => 'vue'], function() {
 
 //advance
 Route::group(['prefix' => 'vue'], function() {
+    Route::get('transition', function () {
+        return view('vue.advance.transition');
+    });
     Route::get('methods-computed', function () {
         return view('vue.advance.methods-computed');
     });
@@ -48,4 +51,14 @@ Route::group(['prefix' => 'vue'], function() {
     //     return App\Article::all();
     // });
     Route::resource('article', 'ArticleController');
+});
+
+//mix
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('first-chart', function () {
+        return view('vue.mix.first-chart');
+    });
+    Route::get('charts', function () {
+        return view('vue.mix.charts');
+    });
 });

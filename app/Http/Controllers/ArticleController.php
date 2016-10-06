@@ -17,7 +17,7 @@ class ArticleController extends Controller
     public function crud()
     {
         $resource = '/vue/article';
-        return view('vue.advance.crud', compact('resource'));
+        return view('vue.mix.crud', compact('resource'));
     }
     public function index(Request $request)
     {
@@ -38,6 +38,14 @@ class ArticleController extends Controller
             return array($article);
         }
         return 'show in ArticleController';
+    }
+    public function store(Request $request){
+        $article = Article::create($request->all());
+        if($request->ajax())
+        {
+            return response($article, 200);
+        }
+        return 'store in ArticleController';
     }
     public function destroy(Request $request, $id){
         $article = Article::find($id);
