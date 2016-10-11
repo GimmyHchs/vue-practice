@@ -61,7 +61,5 @@ Route::group(['prefix' => 'vue'], function() {
     Route::get('charts', function () {
         return view('vue.mix.charts');
     });
-    Route::get('vue-chartjs-lib', function () {
-        return view('vue.mix.vue-chartjs-lib');
-    });
+    Route::get('vue-chartjs-lib', 'ChartController@index');
 });

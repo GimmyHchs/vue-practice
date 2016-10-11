@@ -21,3 +21,11 @@ Vue.component('first-chart', require('./components/mix/first-chart.vue'));
 Vue.component('line-chart', require('./components/mix/line-chart.vue'));
 Vue.component('bar-chart', require('./components/mix/bar-chart.vue'));
 Vue.component('radar-chart', require('./components/mix/radar-chart.vue'));
+
+
+
+
+
+//Libs
+window.vue_charjs = require('./mixin/vue-chartjs-lib.js');
+Vue.component('chartjs-line', require('./components/libs/chartjs-line.vue'));
