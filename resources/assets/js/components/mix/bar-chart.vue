@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="renderChart" type="button" class="btn btn-default btn-block" style="margin-top:20px;">Re Render</button>
-        <canvas id="bar-canvas" :width="width" :height="height">
+        <canvas ref="canvas" :width="width" :height="height">
     </div>
 </template>
 
@@ -94,8 +94,8 @@ export default {
         },
     },
     mounted() {
-        this.canvas = document.querySelector('#bar-canvas');
-        this.context = this.canvas.getContext('2d');
+        this.canvas = this.$refs.canvas;
+        this.context = this.$refs.canvas.getContext('2d');
         this.checkSize();
         this.renderChart();
         // console.log('Bar Chart Component ready.');

@@ -12,6 +12,7 @@
         </div>
     </body>
 
+    @yield('style')
     @section('javascript')
         <script type="text/javascript">
            var mixin ={}
