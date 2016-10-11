@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="renderChart" type="button" class="btn btn-default btn-block" style="margin-top:20px;">Re Render</button>
-        <canvas id="line-canvas" :width="width" :height="height">
+        <canvas id="canvas" :width="width" :height="height">
     </div>
 </template>
 
@@ -88,7 +88,7 @@ export default {
         },
     },
     mounted() {
-        this.canvas = document.querySelector('#line-canvas');
+        this.canvas = document.querySelector('#canvas');
         this.context = this.canvas.getContext('2d');
         this.checkSize();
         this.renderChart();

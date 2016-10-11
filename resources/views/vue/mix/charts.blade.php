@@ -10,13 +10,14 @@
                 <button @click="changeComponent('bar-chart')" type="button" class="btn btn-default">Bar Chart</button>
             </div>
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">Right</button>
+                <button @click="changeComponent('radar-chart')" type="button" class="btn btn-default">Radar Chart</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <h2>Data</h2>
                 <input
+                    type="number"
                     v-model="newData"
                     v-on:keyup.enter="addData"
                     placeholder="Add a Data"
@@ -44,7 +45,9 @@
                 <label for="shutup">Shut Up</label>
                 <button @click="cleanMessage()" type="button" class="btn btn-default">Clean Message</button>
                 <ul>
-                    <li v-for="value in message">@{{value}}</li>
+                    <transition-group enter-active-class="animated fadeInDown">
+                    <li :class="messageClass(value)" v-for="(value,index) in message" :key="index">@{{value}}</li>
+                    </transition>
                 </ul>
             </div>
         </div>
@@ -52,6 +55,19 @@
     {{-- <bar-chart v-show="isNowComponent('bar-chart')" :labels="labels" :data="data"></bar-chart> --}}
     <component :is="now_component" :labels="labels" :data="data"></component>
     </div>
+@endsection
+@section('style')
+    <style>
+        .success{
+            color:#00c853;
+        }
+        .warning{
+            color:#8e24aa;
+        }
+        .error{
+            color:#e64a19;
+        }
+    </style>
 @endsection
 @section('javascript')
     <script type="text/javascript">
@@ -94,11 +110,6 @@
                         return false;
                     }
                 },
-            },
-            methods:{
-                changeComponent(component){
-                    this.now_component = component;
-                },
                 isNowComponent(component){
                     if(this.now_component == component){
                         return true;
@@ -107,8 +118,18 @@
                         return false;
                     }
                 },
+            },
+            methods:{
+                changeComponent(component){
+                    this.now_component = component;
+                },
                 addData(){
-                    this.data.push(this.newData);
+                    if(typeof(this.newData) === 'number'){
+                        this.data.push(this.newData);
+                    }
+                    else {
+                        this.addMessage('Error...Data must be numer');
+                    }
                     this.newData='';
                 },
                 addLabel(){
@@ -121,6 +142,14 @@
                 },
                 cleanMessage(){
                     this.message=[];
+                },
+                messageClass(val){
+                    if(val.includes("Warning"))
+                        return 'warning';
+                    if(val.includes("Error"))
+                        return 'error';
+                    if(val.includes("Ok"))
+                        return 'success';
                 }
             },
         }

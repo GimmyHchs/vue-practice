@@ -20,3 +20,4 @@ window.first_chart = require('./mixin/first-chart.js');
 Vue.component('first-chart', require('./components/mix/first-chart.vue'));
 Vue.component('line-chart', require('./components/mix/line-chart.vue'));
 Vue.component('bar-chart', require('./components/mix/bar-chart.vue'));
+Vue.component('radar-chart', require('./components/mix/radar-chart.vue'));
