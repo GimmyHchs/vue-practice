@@ -2,23 +2,23 @@ export default{
     props: {
         type: {
             type: String,
-            default: 'line',
+            default: () => 'line',
         },
         labels: {
             type: Array,
-            default: ['first', 'second', 'third', 'fourth'],
+            default: () => ['first', 'second', 'third', 'fourth'],
         },
         data: {
             type: Array,
-            default: [40, 60, 45, 70],
+            default: () => [40, 60, 45, 70],
         },
         width: {
             type: Number,
-            default: null,
+            default: () => null,
         },
         height: {
             type: Number,
-            default: null,
+            default: () => null,
         },
     },
     data () {

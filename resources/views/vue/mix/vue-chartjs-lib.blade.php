@@ -15,8 +15,8 @@
     <ul>
         <li>RWD will lose efficacy</li>
     </ul>
-    <pre><code class="language-markup">{{'<chartjs-line width="300" height="300"></chartjs-line>'}}</code></pre>
-    <chartjs-line width="300" height="300"></chartjs-line>
+    <pre><code class="language-markup">{{'<chartjs-line :width="300" :height="300"></chartjs-line>'}}</code></pre>
+    <chartjs-line :width="300" :height="300"></chartjs-line>
     <hr>
     <pre><code class="language-markup">{{'<chartjs-line :labels="[\'happy\',\'myhappy\',\'hello\']" :data="[100,40,60]"></chartjs-line>'}}</code></pre>
     <chartjs-line :labels="['happy','myhappy','hello']" :data="[100,40,60]"></chartjs-line>
