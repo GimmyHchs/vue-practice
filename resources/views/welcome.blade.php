@@ -108,6 +108,7 @@
                         <a href="{{url('/vue/article/crud')}}">Vue-CRUD(Ajax&transition)</a>
                         <a href="{{url('/vue/first-chart')}}">Vue-Mix-ChartJs</a>
                         <a href="{{url('/vue/charts')}}">Vue-ChartJs-Components</a>
+                        <a href="{{url('/vue/vue-chartjs-lib')}}">Vue-ChartJs-Lib</a>
                     </div>
                 </div>
             </div>
