@@ -13,8 +13,11 @@ require('./prism.js');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+// npm package
+// require('hchs-vue-charts');
 
-require('./vue-define.js');
+// local package
+require('./vue-charts/vue-charts.js');
 
 const app = new Vue({
     mixins: [mixin],
