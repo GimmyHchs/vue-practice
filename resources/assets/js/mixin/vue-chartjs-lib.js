@@ -1,14 +1,29 @@
 export default{
-    props:[
-        'type',
-        'labels',
-        'data',
-        'width',
-        'height',
-        'datasets',
-    ],
+    props: {
+        type: {
+            type: String,
+            default: 'line',
+        },
+        labels: {
+            type: Array,
+            default: ['first', 'second', 'third', 'fourth'],
+        },
+        data: {
+            type: Array,
+            default: [40, 60, 45, 70],
+        },
+        width: {
+            type: Number,
+            default: null,
+        },
+        height: {
+            type: Number,
+            default: null,
+        },
+    },
     data () {
         return {
+            datasets : null,
             canvas : null,
             context : null,
             chart: null,
@@ -18,35 +33,12 @@ export default{
             },
             chart_data : {
                 labels: this.labels,
-                datasets: [
-                    {
-                        label: "My First dataset",
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(75,192,192,0.4)",
-                        borderColor: "rgba(75,192,192,1)",
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'miter',
-                        pointBorderColor: "rgba(75,192,192,1)",
-                        pointBackgroundColor: "#fff",
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                        pointHoverBorderColor: "rgba(220,220,220,1)",
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
-                        data: this.data,
-                        spanGaps: false,
-                    },
-                ],
+                datasets: this.datasets,
             },
         };
     },
     watch:{
-        datasets(val){
+        data(val){
             // console.log(val);
             this.renderChart();
         },
@@ -56,15 +48,41 @@ export default{
         }
     },
     methods:{
+        setDatasets(val){
+            this.datasets = val;
+        },
+        cleanChart(){
+            if(this.chart!=null)
+                this.chart.destroy();
+        },
         renderChart() {
-            this.chart = new Chart(this.canvas, {
+            this.cleanChart();
+            this.chart = new Chart(this.context, {
                 type: this.type,
                 data: this.chart_data,
+                options: {
+                    responsive : this.options.responsive,
+                    maintainAspectRatio : this.options.maintainAspectRatio,
+                }
             });
+            // console.log(this.chart);
+        },
+        checkSize(){
+            if(this.width==null||this.height==null)
+            {
+                this.options.responsive = true;
+                this.options.maintainAspectRatio = true;
+            }
         },
     },
     mounted(){
-        // this.canvas = document.querySelector('#canvas').getContext('2d');
-        // this.renderChart(this.canvas);
+        this.canvas = this.$refs.canvas;
+        this.context = this.$refs.canvas.getContext('2d');
+        this.checkSize();
+        this.renderChart();
+    },
+    beforeDestroy(){
+        this.cleanChart();
+        // console.log('Line Chart Before Destroy');
     }
 }
