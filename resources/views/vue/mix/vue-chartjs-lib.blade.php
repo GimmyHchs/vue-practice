@@ -52,12 +52,14 @@
 
     <h3>Set Color</h3>
     <ul>
-        <li>Color support format :  <span class="warning">#00c853</span> and <span class="warning">rgba(75,192,192,1)</span></li>
+        <li>Color support format :  <span class="warning">#00c853</span> and <span class="warning">rgba(75,192,192,0.1)</span></li>
+        <li>bordercolor :  The color of the line.</li>
+        <li>backgroundcolor :  The fill color under the line <span class="warning"> set the fill="true"</span></li>
     </ul>
-    <pre><code class="language-markup">{{'<chartjs-line :bordercolor="\'#00c853\'"></chartjs-line>'}}</code></pre>
+    <pre><code class="language-markup">{{'<chartjs-line :fill="true" :backgroundcolor="\'rgba(75,192,192,0.1)\'" :bordercolor="\'#00c853\'"></chartjs-line>'}}</code></pre>
     or
-    <pre><code class="language-markup">{{'<chartjs-line bordercolor="#00c853"></chartjs-line>'}}</code></pre>
-    <chartjs-line :bordercolor="'#00c853'"></chartjs-line>
+    <pre><code class="language-markup">{{'<chartjs-line :fill="true" backgroundcolor="rgba(75,192,192,0.1)" bordercolor="#00c853"></chartjs-line>'}}</code></pre>
+    <chartjs-line :fill="true" :backgroundcolor="'rgba(75,192,192,0.1)'" :bordercolor="'#00c853'"></chartjs-line>
 @endsection
 @section('style')
     <style>
