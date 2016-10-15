@@ -3,6 +3,7 @@
     <head>
         <title>@yield('title')</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/semantic.css')}}"> --}}
         <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>

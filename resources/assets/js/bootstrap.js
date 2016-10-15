@@ -8,6 +8,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+// require('./../../../node_modules/semantic-ui-css/semantic');
 require('bootstrap-sass');
 
 /**
