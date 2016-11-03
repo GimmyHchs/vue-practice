@@ -101,6 +101,14 @@
                         <a href="{{url('/vue/methods-computed')}}">Methods-Computed</a>
                         <a href="{{url('/vue/article/all')}}">Get-Articles-From-DB</a>
                         <a href="{{url('/vue/article/resource')}}">Vue-Resource(Ajax)</a>
+                        <a href="{{url('/vue/transition')}}">Transition</a>
+                    </div>
+                    <div class="level m-b-md">Mix Vue</div>
+                    <div class="links">
+                        <a href="{{url('/vue/article/crud')}}">Vue-CRUD(Ajax&transition)</a>
+                        <a href="{{url('/vue/first-chart')}}">Vue-Mix-ChartJs</a>
+                        <a href="{{url('/vue/charts')}}">Vue-ChartJs-Components</a>
+                        <a href="{{url('/vue/vue-chartjs-lib')}}">Vue-ChartJs-Lib</a>
                     </div>
                 </div>
             </div>

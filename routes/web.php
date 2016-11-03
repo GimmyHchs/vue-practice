@@ -36,14 +36,30 @@ Route::group(['prefix' => 'vue'], function() {
 
 //advance
 Route::group(['prefix' => 'vue'], function() {
+    Route::get('transition', function () {
+        return view('vue.advance.transition');
+    });
     Route::get('methods-computed', function () {
         return view('vue.advance.methods-computed');
-    });
-    Route::get('article/all', 'ArticleController@all');
-    Route::get('article/api/all', function() {
-        return App\Article::all();
     });
     Route::get('article/resource', function () {
         return view('vue.advance.resource-ajax');
     });
+    Route::get('article/crud', 'ArticleController@crud');
+    Route::get('article/all', 'ArticleController@all');
+    // Route::get('article/api/all', function() {
+    //     return App\Article::all();
+    // });
+    Route::resource('article', 'ArticleController');
+});
+
+//mix
+Route::group(['prefix' => 'vue'], function() {
+    Route::get('first-chart', function () {
+        return view('vue.mix.first-chart');
+    });
+    Route::get('charts', function () {
+        return view('vue.mix.charts');
+    });
+    Route::get('vue-chartjs-lib', 'ChartController@index');
 });

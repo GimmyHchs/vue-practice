@@ -6,14 +6,20 @@
  */
 
 require('./bootstrap');
-
+require('./prism.js');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the body of the page. From here, you may begin adding components to
  * the application, or feel free to tweak this setup for your needs.
  */
 
-require('./vue-define.js');
+// npm package
+// require('hchs-vue-charts');
+
+// local package
+require('./vue-charts/vue-charts.js');
+
 const app = new Vue({
-    el: 'body'
+    mixins: [mixin],
+    el: '#app'
 });
