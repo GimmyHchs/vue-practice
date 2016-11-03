@@ -21,3 +21,8 @@ Vue.component('radar-chart', require('./components/mix/radar-chart.vue'));
 
 //Libs
 require('./vue-charts/vue-charts.js');
+
+
+
+// Vuex
+Vue.component('root', require('./vuex/root.vue'));

@@ -110,6 +110,10 @@
                         <a href="{{url('/vue/charts')}}">Vue-ChartJs-Components</a>
                         <a href="{{url('/vue/vue-chartjs-lib')}}">Vue-ChartJs-Lib</a>
                     </div>
+                    <div class="level m-b-md">Vuex</div>
+                    <div class="links">
+                        <a href="{{url('/vuex/root')}}">Vuex-Root</a>
+                    </div>
                 </div>
             </div>
         </div>

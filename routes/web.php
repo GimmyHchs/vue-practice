@@ -63,3 +63,9 @@ Route::group(['prefix' => 'vue'], function() {
     });
     Route::get('vue-chartjs-lib', 'ChartController@index');
 });
+
+Route::group(['prefix' => 'vuex'], function() {
+    Route::get('root', function () {
+        return view('vuex.root');
+    });
+});

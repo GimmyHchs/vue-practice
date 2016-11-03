@@ -17,9 +17,25 @@ require('./prism.js');
 // require('hchs-vue-charts');
 
 // local package
-require('./vue-charts/vue-charts.js');
+require('./vue-define.js');
+window.store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  getters: {
+    getCount: state => {
+      return state.count;
+    },
+  },
+  mutations: {
+  	increment: state => state.count++,
+    decrement: state => state.count--
+  },
+
+});
 
 const app = new Vue({
     mixins: [mixin],
+    store,
     el: '#app'
 });
